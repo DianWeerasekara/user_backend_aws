@@ -1,8 +1,9 @@
 const express = require('express');
 const mysql = require('mysql');
+const cors = require('cors');
 
 const app = express();
-const port = 3000; 
+const port = 9000; 
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -18,6 +19,7 @@ db.connect((err) => {
     console.log('MySQL Connected')
 })
 
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
