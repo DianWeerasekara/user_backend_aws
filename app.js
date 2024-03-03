@@ -6,7 +6,7 @@ const app = express();
 const port = 9000; 
 
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: 'host.docker.internal',
     user: 'root',
     password: '',
     database: 'aws_service'
